@@ -1,0 +1,16 @@
+kind: Deployment # Collection of pods
+apiVersion: apps/v1
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 5 
+    matchLabels:
+      app: nginx-app 
+  template:
+    metadata:
+      labels:
+        app: nginx-app 
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
